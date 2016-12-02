@@ -25,9 +25,11 @@ if (!is_null($events['events'])) {
 			}
 			else if($checkText == '/info'){
 				$text = "";
-				foreach ($event as $key => $value)
+				foreach ($event as $hkey => $hvalue)
 				{
-					$text = $text."[".$key." : ".$value."]";
+					foreach ($hvalue as $lkey => $lvalue){
+						$text = $text."[".$lkey." : ".$lvalue."]";
+					}
 				}
 				
 				$messages[] = array('type' => 'text','text' => $text);
