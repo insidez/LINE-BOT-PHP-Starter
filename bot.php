@@ -20,23 +20,25 @@ if (!is_null($events['events'])) {
 				$text = 'ข้อความ';
 			}
 			
-			//$messages = ['type' => 'text','text' => $text." : ".$checkText];
+			
 			//array_push($messages,array('type' => 'text'),array('text' => $text));
 			for($i = 0;$i < 4;$i++)
 			{
 				$subMessages = array('type' => 'text','text' => $text);
-				array_push($messages,$subMessages);
+				array_push($messagesTest,array_values($subMessages));
 				//$subMessages["type"] = "text";
 				//$subMessages["text"] = $text;
 				//$messages[] = $subMessages;
 			}
+			$jsonTest = json_encode($messagesTest);
+			$messages = ['type' => 'text','text' => $jsonTest];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
 			];
-			$post = json_encode(array_values($data));
+			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
 
 			$ch = curl_init($url);
