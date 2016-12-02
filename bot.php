@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 			
 			$dataTest = [
 				'replyToken' => "11111111",
-				'messages' => [$subMessages],
+				'messages' => $subMessages,
 			];
 			
 			$jsonTest = json_encode($dataTest);
