@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 			{
 				$subMessages = array();
 				$subMessages["type"] = "text";
-				$subMessages["text"] = "$text";
+				$subMessages["text"] = $text;
 				$messages[] = $subMessages;
 			}
 			
