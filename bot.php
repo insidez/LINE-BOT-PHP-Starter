@@ -25,12 +25,13 @@ if (!is_null($events['events'])) {
 			for($i = 0;$i < 4;$i++)
 			{
 				$subMessages = array('type' => 'text','text' => $text);
-				array_push($messagesTest,array_values($subMessages));
+				//array_push($messagesTest,$subMessages);
 				//$subMessages["type"] = "text";
 				//$subMessages["text"] = $text;
 				//$messages[] = $subMessages;
 			}
-			$jsonTest = json_encode($messagesTest);
+			
+			$jsonTest = json_encode($subMessages);
 			$messages = ['type' => 'text','text' => $jsonTest];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
