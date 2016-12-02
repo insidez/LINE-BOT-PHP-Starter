@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
 			}
 			else if($checkText == '/info'){
 				$text = "";
-				foreach ($events as $key => $value)
+				foreach ($event as $key => $value)
 				{
 					$text = $text."[".$key." : ".$value."]";
 				}
