@@ -30,7 +30,9 @@ if (!is_null($events['events'])) {
 				//$subMessages["text"] = $text;
 				//$messages[] = $subMessages;
 			}*/
-			$subMessages = array('type' => 'text','text' => $text);
+			$subMessages[] = array('type' => 'text','text' => '1');
+			$subMessages[] = array('type' => 'text','text' => '2');
+			
 			$jsonTest = json_encode($subMessages);
 			$messages = ['type' => 'text','text' => $jsonTest];
 			
