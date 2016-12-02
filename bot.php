@@ -12,8 +12,14 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 
 			$checkText = $event['message']['text'];
+			$checkUser = $event['source']['userId'];
 			
 			$replyToken = $event['replyToken'];
+			
+			if($checkUser == 'U40eb83842279e15f7c2891012e201a79')
+			{
+				$messages[] = array('type' => 'text','text' => "สวัสดีครับ คุณ auckarapon");
+			}
 			
 			if($checkText == '/multiline')
 			{
