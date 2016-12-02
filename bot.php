@@ -17,12 +17,12 @@ if (!is_null($events['events'])) {
 			
 			if($checkText == 'ทดสอบ')
 			{
-				$text = 'ข้อความ :';
+				$text = 'ข้อความ';
 			}
 			
 			$messages = [
 				'type' => 'text'
-				,'text' => $text.$checkText
+				,'text' => $text." : ".$checkText
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
