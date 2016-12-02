@@ -24,12 +24,13 @@ if (!is_null($events['events'])) {
 				}
 			}
 			else if($checkText == '/info'){
-				$text = "";
+				$text = "_";
 				foreach ($event as $hkey => $hvalue)
 				{
-					foreach ($hvalue as $lkey => $lvalue){
+					/*foreach ($hvalue as $lkey => $lvalue){
 						$text .= "[".$lkey." : ".$lvalue."]";
-					}
+					}*/
+					$text .= "[".$hkey." : ".$hvalue."]";
 				}
 				
 				$messages[] = array('type' => 'text','text' => $text);
