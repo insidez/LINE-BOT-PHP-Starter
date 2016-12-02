@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
 			
 			//$messages = ['type' => 'text','text' => $text." : ".$checkText];
 			//array_push($messages,array('type' => 'text'),array('text' => $text));
-			for($i = 0;$i < 5;$i++)
+			for($i = 0;$i < 4;$i++)
 			{
 				$subMessages = array('type' => 'text','text' => $text);
 				array_push($messages,$subMessages);
