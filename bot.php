@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 				foreach ($event as $hkey => $hvalue)
 				{
 					foreach ($hvalue as $lkey => $lvalue){
-						$text += "[".$lkey." : ".$lvalue."]";
+						$text .= "[".$lkey." : ".$lvalue."]";
 					}
 				}
 				
