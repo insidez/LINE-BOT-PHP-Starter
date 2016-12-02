@@ -33,7 +33,12 @@ if (!is_null($events['events'])) {
 			$subMessages[] = array('type' => 'text','text' => '1');
 			$subMessages[] = array('type' => 'text','text' => '2');
 			
-			$jsonTest = json_encode($subMessages);
+			$dataTest = [
+				'replyToken' => "11111111",
+				'messages' => [$subMessages],
+			];
+			
+			$jsonTest = json_encode($dataTest);
 			$messages = ['type' => 'text','text' => $jsonTest];
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
