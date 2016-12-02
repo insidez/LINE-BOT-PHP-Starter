@@ -21,10 +21,10 @@ if (!is_null($events['events'])) {
 			}
 			
 			//$messages = ['type' => 'text','text' => $text." : ".$checkText];
-			$messages = [];
+			$messages = array();
 			for($i = 0;$i < 5;$i++)
 			{
-				array_push($messages,'type' => 'text','text' => $text." : ".i+1);
+				array_push($messages,'type' => 'text','text' => $text);
 			}
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
