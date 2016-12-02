@@ -20,16 +20,11 @@ if (!is_null($events['events'])) {
 				$text = 'ข้อความ';
 			}
 			
-			
-			//array_push($messages,array('type' => 'text'),array('text' => $text));
-			/*for($i = 0;$i < 4;$i++)
+			for($i = 0;$i < 4;$i++)
 			{
-				$subMessages = array('type' => 'text','text' => $text);
-				//array_push($messagesTest,$subMessages);
-				//$subMessages["type"] = "text";
-				//$subMessages["text"] = $text;
-				//$messages[] = $subMessages;
-			}*/
+				$messages[] = array('type' => 'text','text' => $text);
+			}
+			/*for test*
 			$subMessages[] = array('type' => 'text','text' => '1');
 			$subMessages[] = array('type' => 'text','text' => '2');
 			
@@ -39,12 +34,12 @@ if (!is_null($events['events'])) {
 			];
 			
 			$jsonTest = json_encode($dataTest);
-			$messages = ['type' => 'text','text' => $jsonTest];
+			$messages = ['type' => 'text','text' => $jsonTest];*/
 			
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
-				'messages' => $subMessages,
+				'messages' => $messages,
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
