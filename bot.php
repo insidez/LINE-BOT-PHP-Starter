@@ -15,14 +15,26 @@ if (!is_null($events['events'])) {
 			
 			$replyToken = $event['replyToken'];
 			
-			if($checkText == 'ทดสอบ')
+			if($checkText == '/multiline')
 			{
 				$text = 'ข้อความ';
+				for($i = 1;$i <= 5;$i++)
+				{
+					$messages[] = array('type' => 'text','text' => $text." : ".$i);
+				}
 			}
-			
-			for($i = 0;$i < 4;$i++)
-			{
+			else if($checkText == '/info'){
+				$text = "";
+				foreach ($events as $key => $value)
+				{
+					$text = $text."[".$key." : ".$value."]";
+				}
+				
 				$messages[] = array('type' => 'text','text' => $text);
+				
+			}else
+			{
+				$messages[] = array('type' => 'text','text' => "Please Try Again");
 			}
 			/*for test*
 			$subMessages[] = array('type' => 'text','text' => '1');
