@@ -21,8 +21,8 @@ if (!is_null($events['events'])) {
 			}
 			
 			//$messages = ['type' => 'text','text' => $text." : ".$checkText];
-			$messages = array();
-			array_push($messages,array('type' => 'text'),array('text' => $text));
+			$messages = array(array('type' => 'text'),array('text' => $text));
+			//array_push($messages,array('type' => 'text'),array('text' => $text));
 			/*for($i = 0;$i < 5;$i++)
 			{
 				array_push($messages,'type' => 'text','text' => $text);
