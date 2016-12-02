@@ -22,15 +22,15 @@ if (!is_null($events['events'])) {
 			
 			
 			//array_push($messages,array('type' => 'text'),array('text' => $text));
-			for($i = 0;$i < 4;$i++)
+			/*for($i = 0;$i < 4;$i++)
 			{
 				$subMessages = array('type' => 'text','text' => $text);
 				//array_push($messagesTest,$subMessages);
 				//$subMessages["type"] = "text";
 				//$subMessages["text"] = $text;
 				//$messages[] = $subMessages;
-			}
-			
+			}*/
+			$subMessages = array('type' => 'text','text' => $text);
 			$jsonTest = json_encode($subMessages);
 			$messages = ['type' => 'text','text' => $jsonTest];
 			
