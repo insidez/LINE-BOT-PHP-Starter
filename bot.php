@@ -27,10 +27,11 @@ if (!is_null($events['events'])) {
 				$text = "_";
 				foreach ($event as $hkey => $hvalue)
 				{
-					/*foreach ($hvalue as $lkey => $lvalue){
-						$text .= "[".$lkey." : ".$lvalue."]";
-					}*/
-					$text .= "[".$hkey." : ".$hvalue."]";
+					$text .= "[".$hkey." : ".$hvalue;
+					foreach ($hvalue as $lkey => $lvalue){
+						$text .= "{".$lkey." : ".$lvalue."}";
+					}
+					$text .= "]";
 				}
 				
 				$messages[] = array('type' => 'text','text' => $text);
