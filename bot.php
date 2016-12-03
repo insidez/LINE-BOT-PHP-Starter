@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			if($checkText == '/multiline')
 			{
 				$text = 'ข้อความ';
-				for($i = 1;$i <= 5;$i++)
+				for($i = 1;$i <= 4;$i++)
 				{
 					$messages[] = array('type' => 'text','text' => $text." : ".$i);
 				}
