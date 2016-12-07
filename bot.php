@@ -42,7 +42,11 @@ if (!is_null($events['events'])) {
 				
 				$messages[] = array('type' => 'text','text' => $text);
 				
-			}else
+			}
+			else if($checkText == '/push'){
+				$messages[] = array('type' => 'text','text' => "yessssssss");
+			}
+			else
 			{
 				$messages[] = array('type' => 'text','text' => "Please Try Again");
 			}
@@ -86,8 +90,8 @@ if (!is_null($events['events'])) {
 				$chPush = curl_init($urlPush);
 				curl_setopt($chPush, CURLOPT_CUSTOMREQUEST, "POST");
 				curl_setopt($chPush, CURLOPT_RETURNTRANSFER, true);
-				curl_setopt($chPush, CURLOPT_POSTFIELDS, $post);
-				curl_setopt($chPush, CURLOPT_HTTPHEADER, $headers);
+				curl_setopt($chPush, CURLOPT_POSTFIELDS, $postPush);
+				curl_setopt($chPush, CURLOPT_HTTPHEADER, $headersPush);
 				curl_setopt($chPush, CURLOPT_FOLLOWLOCATION, 1);
 				$resultPush = curl_exec($chPush);
 				curl_close($chPush);
