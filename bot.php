@@ -79,7 +79,23 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			 
+			 if($checkText == '/push'){
+				$urlPush = 'https://api.line.me/v2/bot/message/push';
+				$dataPush = [
+					'to' => "U40eb83842279e15f7c2891012e201a79",
+					'messages' => $messages,
+				];
+				$postPush = json_encode($dataPush);
+				$headersPush = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
+				$chPush = curl_init($urlPush);
+				curl_setopt($chPush, CURLOPT_CUSTOMREQUEST, "POST");
+				curl_setopt($chPush, CURLOPT_RETURNTRANSFER, true);
+				curl_setopt($chPush, CURLOPT_POSTFIELDS, $postPush);
+				curl_setopt($chPush, CURLOPT_HTTPHEADER, $headersPush);
+				curl_setopt($chPush, CURLOPT_FOLLOWLOCATION, 1);
+				$resultPush = curl_exec($chPush);
+				curl_close($chPush);
+			 }
 
 			echo $result . "\r\n";
 		}
