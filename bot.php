@@ -48,7 +48,7 @@ if (!is_null($events['events'])) {
 			}
 			else
 			{
-				$messages[] = array('type' => 'text','text' => "Please Try Again");
+				$messages[] = array('type' => 'text','text' => "Please Try Agains");
 			}
 			/*for test*
 			$subMessages[] = array('type' => 'text','text' => '1');
